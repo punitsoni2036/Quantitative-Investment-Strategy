@@ -1,0 +1,10 @@
+## Backtest Period Split
+
+- Development period: 2012-01-01 to 2021-12-31 (10 years)
+- Out-of-sample test period: 2022-01-01 to 2024-12-31 (3 years)
+- Chosen because: development period captures multiple regimes (2008 financial crash, 2018 selloff,
+  2020 COVID crash); out-of-sample period includes the 2022 rate-hiking
+  selloff, giving it a genuine stress test rather than only calm markets
+- Commitment: strategy parameters will not be modified based on
+  out-of-sample results. Any future change requires a new strategy version
+  (v1.1+) applied prospectively, not retroactively to this test.

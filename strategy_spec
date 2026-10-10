@@ -8,3 +8,20 @@
 - Commitment: strategy parameters will not be modified based on
   out-of-sample results. Any future change requires a new strategy version
   (v1.1+) applied prospectively, not retroactively to this test.
+
+
+## Out-of-sample evaluation criteria (written [10/10/2026], BEFORE running)
+
+Test period: 2022-01-01 to 2026-6-31 (as committed in spec)
+
+I will consider v1.0 to have "held up" if:
+- Out-of-sample Sharpe is positive and within the range of my development
+  sub-period Sharpes (min to max, from Week 6 Day 4)
+- Max drawdown is not dramatically worse than the benchmark's over the same period
+- Results are directionally consistent with development (positive information ratio)
+
+I will consider it to have "not held up" if Sharpe is negative or drawdown
+is far beyond anything seen in development.
+
+Either way, I will NOT modify v1.0 parameters in response. Any change = new
+version (v1.1+), applied going forward only, with the reasoning documented.

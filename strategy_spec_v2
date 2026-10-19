@@ -1,0 +1,22 @@
+# Strategy v2.0 Specification: DRAFT (freezes on Week 7 Day 2)
+
+## Universe
+- Current S&P 500 constituents (survivorship bias acknowledged in DATA_NOTES.md)
+- A stock is eligible on a date only if all three signals are valid
+
+## Signals (computed at month-end close, using data up to and including that day)
+1. Momentum: close[t-21] / close[t-252] - 1
+2. Low volatility: -(std of daily returns over the trailing 252 days)
+3. Short-term reversal: -(close[t] / close[t-21] - 1)
+
+## Standardisation
+- Winsorise each signal at the 5th and 95th percentile across stocks, per date
+- Cross-sectional z-score per date
+- Combined score = equal-weighted average of the three z-scores
+
+## Parameters
+- 252, 21, 252, 5%/95%
+- sensitivity to be tested later
+
+## Checks done
+- Look-ahead test passed on [N] random development-period dates

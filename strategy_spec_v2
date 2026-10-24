@@ -20,3 +20,12 @@
 
 ## Checks done
 - Look-ahead test passed on [N] random development-period dates
+
+
+## Portfolio construction and execution
+- Hold the top 15 names by combined score; equal dollar weight at each rebalance
+- Rebalance monthly; signal at month-end close, executed at the NEXT trading day's close
+- Backtest uses fractional shares (cash drag in whole-share mode: [your number])
+- Between rebalances, positions drift; no intra-month trading
+- Cash earns no interest (simplification). 
+- n_holdings = 15 carried over from v1.0 as a convention, not tuned; sensitivity tested in Week 8

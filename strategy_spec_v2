@@ -29,3 +29,9 @@
 - Between rebalances, positions drift; no intra-month trading
 - Cash earns no interest (simplification). 
 - n_holdings = 15 carried over from v1.0 as a convention, not tuned; sensitivity tested in Week 8
+
+
+
+
+## Transaction cost assumption (decided Day 32, before any results)
+- Base case: [10] bps per side, charged on traded notional (buys and sells)

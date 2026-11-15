@@ -32,6 +32,26 @@
 
 
 
+## Validation criteria (15/11/26 - before the validation run)
 
-## Transaction cost assumption (decided Day 32, before any results)
+Window: 2022-01-01 to 2024-12-31. Weights: [W_FINAL]. Cost: 10 bps. Fresh start from cash.
+
+Development sub-period reference ranges: Sharpe [min]-[max]; max drawdown worst [x]%;
+beta [min]-[max].
+
+- C1: validation net Sharpe >= [min dev sub-period Sharpe]
+- C2: validation net CAGR minus equal-weight-universe net CAGR > 0
+- C3: max drawdown not worse than [worst dev drawdown] + 5 percentage points
+- C4: beta vs SPY within [min dev beta - 0.15, max dev beta + 0.15]
+- C5: mean monthly rank IC of the combined score > 0 over the window
+
+Verdict: HELD UP if C1, C2 and C5 all pass. DID NOT HOLD UP if net Sharpe <= 0, or if C2 and C5
+both fail. Otherwise MIXED (report which criteria failed).
+
+
+Known contamination: I saw v1.0's result on this window before designing v2.0.
+
+
+
+## Transaction cost assumption (decided before any results)
 - Base case: [10] bps per side, charged on traded notional (buys and sells)

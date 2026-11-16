@@ -55,3 +55,13 @@ Known contamination: I saw v1.0's result on this window before designing v2.0.
 
 ## Transaction cost assumption (decided before any results)
 - Base case: [10] bps per side, charged on traded notional (buys and sells)
+
+
+## Week 8 Day 4: significance tests (before running)
+
+Windows: development (2012-2021) and validation (2022-2024), reported separately. Holdout untouched.
+Tests: (1) t-test of mean daily excess return vs 0; (2) analytic and block-bootstrap 95% CI for the
+net Sharpe; (3) strategy vs equal-weight universe: paired block bootstrap of the Sharpe difference
+and of annualised active return; (4) null-best-Sharpe comparison across a bracket of trial counts.
+Conventions: 95% intervals, block length 21 days (sensitivity: 5 and 63), 3,000 resamples.
+
